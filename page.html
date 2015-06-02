@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cycle Detection Algorithm in graph</title>
+		<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	</head>
+	<body>
+		<h1>William's Portal</h1>
+		<p class="author">Dibuat oleh : William Sentosa / 13513026</p>
+		<h2>Algoritma Pendeteksi Siklus dalam Graf</h2>
+		<figure>
+			<img src="images/graf.png" 
+			alt="graf" 
+			width="230" height="180"/>
+			<br>
+		</figure>
+		<p>
+			Graf merupakan konsep yang sangat penting dalam bidang <i>computer science</i>. 
+			Graf dapat digambarkan untuk menyederhanakan permasalahan sehingga 
+			permasalahan tersebut dapat dipecahkan oleh komputer. 
+			Nah, algoritma yang cukup penting dalam graf adalah algoritma 
+			pendeteksi siklus dalam graf. 
+			Apasih yang dimaksud dengan siklus ? Siklus yang dimaksud adalah loop/kalang pada graf.</div>
+		</p>
+		<figure>
+			<img src="images/cycle1.png" alt="cycle">
+		</figure>
+		<p>
+			Misal sebuah graf mempunyai node dan edge seperti ini :<br>
+			Node 1 punya sisi ke node 2, dan node 2 punya sisi yang menuju ke node 1, sehingga alurnya menjadi :
+			1 -> 2 -> 1
+		</p>
+		<p>
+			Ini merupakan siklus dalam sebuah graf. Nah, untuk mendeteksinya kita perlu menggunakan suatu algoritma.
+		</p>
+		<p>
+			Sebelum kita ngomongin algoritma itu, ada baiknya kita mengetahui apasih kegunaan dari pendeteksi siklus dalam graf ini.
+			Salah satu kegunaannya dalam ilmu <i>computer science</i> adalah untuk mendeteksi adanya kondisi <i>deadlock</i> 
+			pada susunan thread dengan bantuan <i>Resource Alocation Graph</i>. Wah, apa itu deadlock ? Kalo dibahas disini jadi panjang artikelnya -_- .
+		</p>
+		<h3>Penjelasan Algoritma</h3>
+		<p>
+			Cycle detection dapat diterapkan dengan menggunakan algoritma penelusuran 
+			baik itu DFS (Depth Field Searching) maupun BFS (Breadth-First Seaching). 
+			Kita akan menelusuri seluruh jalan pada graf dan melihat apakah ada jalan 
+			yang bersifat rekursif. Jika ada jalan yang bersifat rekursif, 
+			graf tersebut dipastikan punya siklus.
+		</p>
+		<p>
+			Misalnya :<br>
+			Ada sebuah Graf G dengan simpul dan sisi sebagai berikut :
+			<figure>
+				<table border="2">
+					<tr>
+						<th>Node</th>
+						<th>Sisi</th>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>B</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>A,D</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>E</td>
+					</tr>
+					<tr>
+						<td>E</td>
+						<td>-</td>
+					</tr>
+				</table>
+			</figure>
+		<p>
+		<p>Penggambaran graf tersebut adalah sebagai berikut</p>
+		<figure>
+			<img src="images/Graf1.png" alt="Graf1"/>
+		</figure>
+		<p>
+			Untuk mengetahui apakah rekursif atau tidak, kita perlu menyimpan node-node 
+			yang telah dikunjungi. Bila kita menjelajahi node yang 
+			telah dikunjungi tadi, bisa dipastikan graf tersebut mengandung 
+			siklus.</div>
+		</p>
+		<p>
+			Untuk itu, kita dapat menggunakan DFS maupun BFS untuk menjelajahinya dan membentuk pohon penelusuran.
+			Setiap node yang dibuat akan memiliki array yang berisi nama node-node yang telah dikunjungi oleh parent node.
+			Selama penjelajahan, node yang sedang dikunjungi akan disimpan dalam array. Ketika node yang sedang dikunjungi ternyata
+			sudah ada di dalam array (berarti node tersebut sudah pernah dikunjungi), maka dapat dipastikan graf tersebut 
+			mengandung siklus dan pembentukan pohon berhenti.
+		</p>
+		<p>Berdasarkan penjelasan diatas, pohon penjelajahan untuk graf tersebut adalah</p>
+		<figure>
+			<img src="images/PohonPencarian.png" alt="pohon"
+				width="300"
+				height="220" />
+		</figure>
+		<p>Sehingga dapat disimpulkan graf tersebut memiliki siklus.</p>
+		<figure>
+			<img src="images/GrafSiklus.png" alt="GrafSiklus"/>
+		</figure>
+		<h3>Referensi</h3>
+		<p>
+			<a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/">Sumber 1</a><br>
+			<a href="http://en.wikipedia.org/wiki/Cycle_detection">Sumber 2</a>
+		</p>
+	</body>
+</html>

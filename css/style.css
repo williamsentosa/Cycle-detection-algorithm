@@ -1,0 +1,35 @@
+body {
+	font-family: arial;
+	background-color: lavender;
+}
+h1 {
+	background-color: MediumSlateBlue; 
+	color: white;
+	font-family: verdana;
+	font-size: 45px;
+	padding: 15px;
+}
+h2 {
+	background-color: MediumPurple;
+	color: white;
+	padding: 5px;
+}
+
+h3 {
+	background-color: MediumPurple;
+	color: white;
+	padding: 5px;
+}
+
+p {
+	text-align: justify;
+	padding-left: 10px;
+	padding-right: 40px;
+	line-height: 1.5em;
+}
+
+p.author {
+	padding-left: 2px;
+	font-size: 14px;
+	font-style: italic;
+}
